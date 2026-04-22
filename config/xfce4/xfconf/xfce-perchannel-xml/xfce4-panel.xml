@@ -90,8 +90,10 @@
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
         <value type="string" value="xfce4-screenshooter.desktop"/>
         <value type="string" value="org.inkscape.Inkscape.desktop"/>
+        <value type="string" value="lightdm-gtk-greeter-settings.desktop"/>
       </property>
       <property name="recent" type="array">
+        <value type="string" value="com.logseq.Logseq.desktop"/>
         <value type="string" value="com.github.wwmm.easyeffects.desktop"/>
         <value type="string" value="gimp.desktop"/>
         <value type="string" value="org.xfce.xfdashboard.desktop"/>
@@ -142,6 +144,8 @@
     </property>
     <property name="plugin-6" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="connessione wi-fi «tim-47375923» attiva: tim-47375923 (71%)"/>
+        <value type="string" value="connessione wi-fi «tim-47375923» attiva: tim-47375923 (60%)"/>
         <value type="string" value="terminale di xfce"/>
         <value type="string" value="connessione wi-fi «tim-47375923» attiva: tim-47375923 (69%)"/>
         <value type="string" value="connessione wi-fi «tim-47375923» attiva: tim-47375923 (72%)"/>

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # ═══════════════════════════════════════════════════════════════════
 # Nota: Master Setup Script per la gestione e automazione dei 
-# dotfiles, installare dipendenze su Void, Arch, Debian e FEDORA.
+# dotfiles, installare dipendenze su Void, Arch, Debian e Fedora.
 #
-# Versione: 2.6 (Fix Link Ricorsivi & Git Upstream)
+# Versione: 2.6 
 # Autore  : ilnanny 2026
 # ═══════════════════════════════════════════════════════════════════
 
@@ -12,7 +12,7 @@ shopt -s nullglob
 # ── Colori ──────────────────────────────────────────────────────────
 V="\e[32m"; R="\e[31m"; C="\e[36m"; G="\e[33m"; B="\e[1m"; RESET="\e[0m"
 
-# ── Rilevamento automatico DOTFILES ─────────────────────────────────
+# ── Rilevamento automatico dotfiles 
 _trova_dotfiles() {
     local candidati=(
         "${DOTFILES}"
@@ -43,7 +43,7 @@ if ! _trova_dotfiles; then
     exit 1
 fi
 
-# ── Funzioni Log ────────────────────────────────────────────────────
+# ── Funzioni Log 
 info()    { echo -e "${C}󰋼 ${B}INFO:${RESET} $1"; }
 warn()    { echo -e "${G}󰀦 ${B}WARN:${RESET} $1"; }
 err()     { echo -e "${R}󰅚 ${B}ERRORE:${RESET} $1"; }
@@ -56,13 +56,13 @@ confirm() {
     [[ "$risposta" =~ ^[sS]$ ]]
 }
 
-# ── Funzione per creare link simbolici in modo SICURO ───────────────
+# ── Funzione per creare link simbolici 
 safe_link() {
     local src="$1"
     local dst="$2"
     
     if [[ -e "$src" ]]; then
-        # Se la destinazione esiste ed è una cartella (non link), la backuppiamo
+        # Se la cartella esiste,crea un backup
         if [[ -d "$dst" && ! -L "$dst" ]]; then
             warn "Backup cartella esistente: $dst"
             mv "$dst" "${dst}.bak_$(date +%H%M%S)"
@@ -70,15 +70,14 @@ safe_link() {
 
         mkdir -p "$(dirname "$dst")"
         
-        # USARE -n (o --no-dereference) È VITALE:
-        # Impedisce di creare un link DENTRO la cartella se esiste già.
+        # Usa -n (o --no-dereference) evita link loop
         ln -sfn "$src" "$dst"
     else
         err "Sorgente non trovata: $src"
     fi
 }
 
-# ── Header ──────────────────────────────────────────────────────────
+# ── Header 
 header() {
     clear
     echo -e "${C}═════════════════════════════════════════════════════${RESET}"
@@ -86,7 +85,7 @@ header() {
     echo -e "${C}═════════════════════════════════════════════════════${RESET}"
 }
 
-# ── Installazione Dipendenze ────────────────────────────────────────
+# ── Installazione Dipendenze 
 install_deps() {
     step "Verifica software di sistema su $OS_ID"
     declare -A PKGS
@@ -120,7 +119,7 @@ install_deps() {
     fi
 }
 
-# ── Gestione Link Simbolici ─────────────────────────────────────────
+# ── Gestione Link Simbolici 
 deploy_bashrc() {
     step "Configurazione Bash"
     mkdir -p ~/.bashrc.d
@@ -160,14 +159,12 @@ deploy_config() {
     step "Deploy ~/.config"
     mkdir -p "$HOME/.config"
     for src in "$DOTFILES/config"/*; do
-        # AGGIUNTO: Salta la cartella Code
         [[ "$(basename "$src")" == "Code" ]] && continue
         
         target="$HOME/.config/$(basename "$src")"
         safe_link "$src" "$target"
     done
     
-    # Overlay specifico per Fedora
     if [[ "$OS_ID" == "fedora" && -d "$DOTFILES/Fedora/config" ]]; then
         for src in "$DOTFILES/Fedora/config"/*; do
             target="$HOME/.config/$(basename "$src")"
@@ -196,7 +193,7 @@ deploy_wallpapers() {
     sudo cp -ru "$src"/* "$dst/" 2>/dev/null && ok "Wallpapers aggiornati."
 }
 
-# ── Utility ─────────────────────────────────────────────────────────
+# ── Utility 
 clean_cache() {
     step "Pulizia cache XFCE"
     rm -rf ~/.cache/sessions/* ~/.cache/xfce4/*
@@ -230,7 +227,7 @@ _leggi_guide() {
     done
 }
 
-# ── Menu Master ─────────────────────────────────────────────────────
+# ── Menu Master 
 while true; do
     header
     echo -e "${C}╔═══════════════════════════════════════════════════╗${RESET}"

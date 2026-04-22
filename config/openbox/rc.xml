@@ -36,19 +36,19 @@
       <slant>Normal</slant>
     </font>
     <font place="MenuHeader">
-      <name>JetBrainsMonoNL Nerd Font Propo Medium</name>
+      <name>FiraCode Nerd Font Mono Retina Bold</name>
       <size>11</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuItem">
-      <name>JetBrainsMonoNL Nerd Font Propo Semi-Bold</name>
+      <name>FiraCode Nerd Font Mono Retina Bold</name>
       <size>12</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>JetBrainsMonoNL Nerd Font Propo</name>
+      <name>FiraCode Nerd Font Mono Retina</name>
       <size>11</size>
       <weight>Normal</weight>
       <slant>Normal</slant>

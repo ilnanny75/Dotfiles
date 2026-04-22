@@ -9,7 +9,7 @@
 # GitHub: https://github.com/ilnanny75
 # ═══════════════════════════════════════════════════════════════════
 #
-#  SCHEMA PARTIZIONI (adatta ai tuoi UUID):
+#  SCHEMA PARTIZIONI :
 #  /dev/sda1  256M  vfat   EFI condivisa    UUID=5FCE-81..
 #  /dev/sda2  53.7G ext4   Debian root
 #  /dev/sda3  53.7G ext4   Arch Linux root
@@ -244,8 +244,8 @@ sudo umount "$MOUNT"
 
 ok "Smontaggio completato. Puoi riavviare su Void!"
 
-# Aggiorna GRUB di MX per vedere Void
-info "Aggiorno GRUB di MX Linux per includere Void..."
+# Aggiorna GRUB di Debian per vedere Void
+info "Aggiorno GRUB di Debian Linux per includere Void..."
 sudo os-prober
 sudo update-grub
 ok "GRUB MX aggiornato. Ciao! 🐧"

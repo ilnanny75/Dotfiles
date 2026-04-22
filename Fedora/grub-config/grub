@@ -1,0 +1,41 @@
+# --- TEMPO DI ATTESA ---
+GRUB_TIMEOUT=5
+
+# --- IDENTIFICAZIONE OS  ---
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+
+# --- COMPORTAMENTO AVVIO ---
+GRUB_DEFAULT=saved
+# true raggruppa i vecchi kernel  
+GRUB_DISABLE_SUBMENU=true
+
+# --- INTERFACCIA GRAFICA ---
+# Abilita l'output grafico 
+GRUB_TERMINAL_OUTPUT="gfxterm"
+
+# --- PARAMETRI KERNEL ---
+# rhgb = mostra il logo Fedora al caricamento
+# quiet = nasconde i messaggi di testo del kernel durante l'avvio
+GRUB_CMDLINE_LINUX="rhgb quiet"
+
+# --- SICUREZZA E MANUTENZIONE ---
+# Nasconde la voce Recovery Mode 
+GRUB_DISABLE_RECOVERY="true"
+# Abilita il BootLoader Spec 
+GRUB_ENABLE_BLSCFG=true
+
+# --- FONT E RISOLUZIONE ---
+# Font personalizzato 
+GRUB_FONT=/boot/grub2/fonts/DejaVuSansMono32.pf2
+# Risoluzione del menu 
+GRUB_GFXMODE=1920x1080
+# Stessa risoluzione anche durante il caricamento di Linux
+GRUB_GFXPAYLOAD_LINUX=keep
+
+# --- SFONDO ---
+# Percorso dell'immagine png ,jpg
+GRUB_BACKGROUND="/usr/share/wallpapers/xfce-pantone.png"
+
+# --- MULTI-BOOT  ---
+# False ,cerca altri os nel disco
+GRUB_DISABLE_OS_PROBER=false

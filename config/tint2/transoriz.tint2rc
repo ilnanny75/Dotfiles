@@ -160,7 +160,7 @@ ac_disconnected_cmd =
 #-------------------------------------
 # Button 1
 button = new
-button_icon = /home/ilnanny/.icons/menu/menul.png
+button_icon = ~/.icons/menu/menul.png
 button_text = 
 button_tooltip = menu
 button_lclick_command = jgmenu_run
