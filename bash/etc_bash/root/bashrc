@@ -1,0 +1,49 @@
+#==========================================================
+#   BASHRC ROOT - Lab 2026 (Gentoo/Slackware Edition)
+#==========================================================
+# Author    : Cristian Pozzessere = ilnanny =
+# GitHub    : https://github.com/ilnanny75
+#==========================================================
+
+# --- 🛑 Controllo Sicurezza ------------------------------
+# Solo root deve eseguire questo file
+if [ "$(id -u)" -ne 0 ]; then
+    return
+fi
+
+# --- 🐚 Shell Interattiva --------------------------------
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# --- 📁 Profili di Sistema -------------------------------
+for SH in /etc/profile.d/*.sh; do
+    [ -r "$SH" ] && . "$SH"
+done
+
+# --- 🚀 CARICAMENTO ALIAS DAL TUO LAB 2026 ---------------
+# Qui root va a leggere i tuoi file dentro ~/dotfiles
+# NOTA: Assicurati che il nome utente sia 'ilnanny'
+MY_USER="ilnanny"
+
+if [ -d "/home/$MY_USER/dotfiles/bash/etc_bash/bashrc.d/" ]; then
+    for sh in "/home/$MY_USER/dotfiles/bash/etc_bash/bashrc.d/"*; do
+        if [ -r "${sh}" ]; then
+            . "${sh}"
+        fi
+    done
+fi
+
+# --- 🎨 Prompt ROOT (Rosso Sicurezza) --------------------
+# Nota: Non carichiamo ps1.sh per root per mantenere
+# la distinzione visiva di pericolo.
+export PS1="\[\e[01;31m\]┌─[ROOT]───[\u@\h]───[\w]\n└───▶ \[\e[0m\]"
+
+# --- 📂 Alias Specifici per ROOT -------------------------
+alias bashome='geany /root/.bashrc'
+alias fstab='geany /etc/fstab'
+alias vedi='ls -sh --color=auto -I "*.png" -I "*.jpg"'   # Fix anti-codice strano
+alias treed='tree -h --du -a -C -I "*.png|*.jpg|*.pdf"' # Fix anti-codice strano
+
+# ________________________  Fine

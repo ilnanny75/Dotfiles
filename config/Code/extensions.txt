@@ -1,0 +1,8 @@
+github.copilot-chat
+google.geminicodeassist
+ms-ceintl.vscode-language-pack-it
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-pylance
+ms-python.vscode-python-envs
+yzhang.markdown-all-in-one

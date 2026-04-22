@@ -1,0 +1,17 @@
+# /etc/fstab: CONFIGURAZIONE MULTIBOOT (SSD ESTERNO)
+# <file system>                             <mount point>               <type>  <options>                            <dump>  <pass>
+# --------------------------------------------------------------------------------------------------------------------------------------------
+
+# 1. PARTIZIONE EFI (SSD Esterno - sda1)
+UUID=CD12-E650                              /boot/efi                   vfat    defaults                                0       2
+
+# 2. PARTIZIONE ROOT (Debian - sda2)
+UUID=9cbf0120-b955-4a11-ae0b-69bfd5348752   /                           ext4    noatime,rw                              0       1
+
+# 3. PARTIZIONE DATI EXTRA (Condivisa - sda5)
+UUID=40175288-0055-44da-9612-c080122d04c8   /media/ilnanny/dati-linux   ext4    noatime,rw,nofail,x-gvfs-show           0       2
+
+# 4. FILESYSTEM VIRTUALE (RAMDISK)
+tmpfs                                       /tmp                        tmpfs   defaults,nosuid,nodev                   0       0
+
+# --------------------------------------------------------------------------------------------------------------------------------------------

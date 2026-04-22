@@ -1,0 +1,15 @@
+# Per avere un log dettagliato dell'intera operazione ,lancia lo script con :
+
+sudo ./debian-chroot.sh 2>&1 | tee installazione.log
+
+# Per rinominare la partizione alla fine dai :
+
+sudo e2label /dev/sda2 Debian-root
+
+# Controlla che sia giusto:
+
+lsblk -o NAME,LABEL,FSTYPE
+
+# Se per qualche motivo e2label non dovesse essere installato:
+
+sudo tune2fs -L "Debian-root" /dev/sda2

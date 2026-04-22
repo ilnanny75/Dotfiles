@@ -1,0 +1,5 @@
+sudo bash 01-partizioni.sh
+sudo bash 02-base.sh
+sudo bash 03-desktop.sh
+sudo bash 04-postinstall.sh
+umount -R /mnt/arch && reboot

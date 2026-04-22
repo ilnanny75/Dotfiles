@@ -1,0 +1,10 @@
+.gemini_key
+*.bak
+config/Code/Cache/
+config/Code/CachedData/
+config/Code/logs/
+config/Code/User/History/
+config/Code/User/workspaceStorage/
+config/Code/Cookies*
+config/Code/machineid
+*.log

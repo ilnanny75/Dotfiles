@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=exo-open --launch WebBrowser https://gemini.google.com
+Icon=google-gemini
+StartupNotify=true
+Terminal=false
+Categories=Network;X-XFCE;X-Xfce-Toplevel;
+Keywords[it]=internet;web;browser;surf;explore;xfce;
+Keywords=internet;web;browser;surf;explore;xfce;
+OnlyShowIn=XFCE;
+X-XFCE-MimeType=x-scheme-handler/http;x-scheme-handler/https;
+X-AppStream-Ignore=True
+Name[it]=Gemini
+Name=Web Browser
+Comment[it]=
+Comment=Browse the web
+X-XFCE-Source=file:///usr/share/applications/xfce4-web-browser.desktop
+Path=

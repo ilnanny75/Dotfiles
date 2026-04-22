@@ -1,0 +1,65 @@
+{
+    // --- SICUREZZA ---
+    // Permette di aprire file da cartelle non "attendi" senza mostrare avvisi di sicurezza ogni volta.
+    "security.workspace.trust.untrustedFiles": "open",
+    // --- GESTIONE EDITOR E SCHEDE ---
+    // Blocca automaticamente il tipo di editor per certi file (es. anteprime, browser interni).
+    "workbench.editor.autoLockGroups": {
+        "default": true,
+        "workbench.editorinputs.searchEditorInput": true,
+        "workbench.editor.browser": true,
+        "imagePreview.previewEditor": true,
+        "vscode.audioPreview": true,
+        "vscode.videoPreview": true,
+        "jsProfileVisualizer.cpuprofile.table": true
+    },
+    // Forza l'uso dell'anteprima Markdown come visualizzazione predefinita per i file binari.
+    "workbench.editor.defaultBinaryEditor": "vscode.markdown.preview.editor",
+    // Mostra sempre le icone delle azioni (come il tasto 'Play' o 'Dividi editor') in alto a destra.
+    "workbench.editor.alwaysShowEditorActions": true,
+    // --- INTERFACCIA GRAFICA ---
+    // Disabilita la "Mini-mappa" (la colonna sulla destra che mostra l'anteprima rimpicciolita del codice).
+    "editor.minimap.enabled": false,
+    // Posiziona la barra laterale (quella con le icone e la chat di Gemini) sul lato destro dello schermo.
+    "workbench.sideBar.location": "right",
+    // Impedisce a VS Code di riaprire automaticamente l'ultima cartella o file all'avvio.
+    "window.restoreWindows": "none",
+    // --- EDITOR DI TESTO ---
+    // Esegue la formattazione automatica (allineamento, spazi) ogni volta che salvi un file.
+    "editor.formatOnSave": true,
+    // Imposta il font principale dell'editor usando FiraCode (Nerd Font) per i simboli speciali.
+    "editor.fontFamily": "'FiraCode Nerd Font Retina', 'Droid Sans Mono', monospace",
+    // Attiva le "legature": trasforma simboli come '->' o '!=' in icone grafiche più leggibili.
+    "editor.fontLigatures": true,
+    // --- TERMINALE INTEGRATO ---
+    // Nasconde il suggerimento iniziale che appare quando apri un nuovo terminale.
+    "terminal.integrated.initialHint": false,
+    // Specifica che, se vuoi usare un terminale esterno su Linux, deve aprire xfce4-terminal.
+    "terminal.external.linuxExec": "xfce4-terminal",
+    // Imposta la dimensione del testo del terminale a 16.
+    "terminal.integrated.fontSize": 16,
+    // Usa il font FiraCode anche all'interno del terminale.
+    "terminal.integrated.fontFamily": "'FiraCode Nerd Font Retina'",
+    // --- ACCESSIBILITÀ E COMPORTAMENTO TERMINALE ---
+    // DISATTIVA l'apertura automatica della "Visualizzazione Accessibile" .
+    "terminal.integrated.accessibleViewFocusOnCommandExecution": false,
+    "terminal.integrated.accessibleViewPreserveCursorPosition": false,
+    // Disattiva i messaggi vocali del terminale per gli screen reader.
+    "accessibility.verbosity.terminal": false,
+    // Applica le impostazioni del terminale di automazione Linux a tutti i profili.
+    "workbench.settings.applyToAllProfiles": [
+        "terminal.integrated.automationProfile.linux"
+    ],
+    // Rende il cursore del terminale lampeggiante.
+    "terminal.integrated.cursorBlinking": true,
+    // Copia automaticamente il testo negli appunti non appena lo selezioni col mouse nel terminale.
+    "terminal.integrated.copyOnSelection": true,
+    // Imposta lo stile del cursore del terminale come una sottolineatura ('underline').
+    "terminal.integrated.cursorStyle": "underline",
+    // Permette di fare lo zoom avanti/indietro nel terminale usando CTRL + rotella del mouse.
+    "terminal.integrated.mouseWheelZoom": true,
+    "git.enableSmartCommit": true,
+    "workbench.colorTheme": "Theme Mix",
+    "chat.disableAIFeatures": true,
+    "update.showReleaseNotes": false
+}

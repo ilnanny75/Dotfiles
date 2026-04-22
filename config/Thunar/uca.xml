@@ -1,0 +1,145 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+
+<action>
+    <icon>utilities-terminal</icon>
+    <name>Apri un terminale qui</name>
+    <unique-id>id-terminal-001</unique-id>
+    <command>xfce4-terminal --working-directory=%f</command>
+    <description>Apre il terminale nella cartella corrente</description>
+    <patterns>*</patterns>
+    <startup-notify/>
+    <directories/>
+</action>
+
+<action>
+    <icon>system-run</icon>
+    <name>Rendi eseguibile</name>
+    <unique-id>id-chmod-x-010</unique-id>
+    <command>chmod +x %f</command>
+    <description>Rende il file selezionato un programma eseguibile</description>
+    <patterns>*</patterns>
+    <other-files/>
+    <text-files/>
+</action>
+
+<action>
+    <icon>system-run</icon>
+    <name>Esegui Script</name>
+    <unique-id>id-run-script-005</unique-id>
+    <command>xfce4-terminal -e %f --hold</command>
+    <description>Esegue lo script e tiene aperta la finestra</description>
+    <patterns>*</patterns>
+    <other-files/>
+    <text-files/>
+</action>
+
+<action>
+    <icon>dialog-password</icon>
+    <name>Thunar come Root</name>
+    <unique-id>id-root-thunar-003</unique-id>
+    <command>pkexec thunar %f</command>
+    <description>Apre Thunar con permessi di amministrazione</description>
+    <patterns>*</patterns>
+    <directories/>
+</action>
+
+<action>
+    <icon>accessories-text-editor</icon>
+    <name>Edita come Root (Geany)</name>
+    <unique-id>id-root-geany-004</unique-id>
+    <command>pkexec geany %f</command>
+    <description>Modifica file di sistema con Geany</description>
+    <patterns>*</patterns>
+    <text-files/>
+    <other-files/>
+</action>
+
+<action>
+    <icon>audio-x-generic</icon>
+    <name>Estrai Audio (MP3)</name>
+    <unique-id>id-extract-mp3-012</unique-id>
+    <command>ffmpeg -i %f -vn -ar 44100 -ac 2 -ab 192k -f mp3 &quot;%n.mp3&quot;</command>
+    <description>Converte il video selezionato in MP3</description>
+    <patterns>*</patterns>
+    <video-files/>
+</action>
+
+<action>
+    <icon>image-x-generic</icon>
+    <name>Ridimensiona (50%)</name>
+    <unique-id>id-resize-img-013</unique-id>
+    <command>convert %f -resize 50% &quot;small_%n&quot;</command>
+    <description>Ridimensiona l&apos;immagine al 50%</description>
+    <patterns>*</patterns>
+    <image-files/>
+</action>
+
+<action>
+    <icon>image-png</icon>
+    <name>SVG to PNG (Fixed)</name>
+    <unique-id>id-svg-png-014</unique-id>
+    <command>xfce4-terminal -e &quot;inkscape -d 300 -C --export-filename=%n.png %n&quot; --hold</command>
+    <description>Converte SVG in PNG a 300dpi nella cartella corrente</description>
+    <patterns>*.svg;*.SVG</patterns>
+    <image-files/>
+    <other-files/>
+</action>
+
+<action>
+    <icon>emblem-symbolic-link</icon>
+    <name>Crea Symlink</name>
+    <unique-id>id-symlink-002</unique-id>
+    <command>ln -s %f &quot;symlink a %n&quot;</command>
+    <description>Crea un collegamento simbolico</description>
+    <patterns>*</patterns>
+    <directories/>
+    <audio-files/>
+    <image-files/>
+    <other-files/>
+    <text-files/>
+    <video-files/>
+</action>
+
+<action>
+    <icon>background</icon>
+    <name>Imposta come Sfondo</name>
+    <unique-id>id-wallpaper-006</unique-id>
+    <command>feh --bg-fill %f</command>
+    <description>Imposta immagine come desktop wallpaper</description>
+    <patterns>*</patterns>
+    <image-files/>
+</action>
+
+<action>
+    <icon>system-search</icon>
+    <name>Cerca qui...</name>
+    <unique-id>id-search-007</unique-id>
+    <command>catfish --path=%f</command>
+    <description>Cerca file all&apos;interno della cartella</description>
+    <patterns>*</patterns>
+    <directories/>
+</action>
+
+<action>
+    <icon>folder-remote</icon>
+    <name>Condividi in Lan</name>
+    <unique-id>id-lan-008</unique-id>
+    <command>net usershare add %n %f &quot;&quot; Everyone:F guest_ok=n &amp;&amp; chmod 777 %f</command>
+    <description>Condivide la cartella in LAN tramite Samba</description>
+    <patterns>*</patterns>
+    <directories/>
+</action>
+
+<action>
+    <icon>system-devices-panel</icon>
+    <name>Checksum MD5/SHA</name>
+    <unique-id>id-checksum-009</unique-id>
+    <command>zenity --info --title=&quot;Checksum %n&quot; --text=&quot;MD5: $(md5sum %f | awk &apos;{print $1}&apos;)\n\nSHA256: $(sha256sum %f | awk &apos;{print $1}&apos;)&quot;</command>
+    <description>Calcola i codici hash del file</description>
+    <patterns>*</patterns>
+    <other-files/>
+    <text-files/>
+</action>
+
+</actions>

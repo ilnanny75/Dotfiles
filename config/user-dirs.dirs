@@ -1,0 +1,13 @@
+# File di configurazione delle cartelle Home 
+# 
+#
+XDG_DESKTOP_DIR="$HOME/Scrivania"
+XDG_DOWNLOAD_DIR="$HOME/Scaricati"
+XDG_TEMPLATES_DIR="$HOME/Modelli"
+XDG_DOCUMENTS_DIR="$HOME/Documenti"
+XDG_MUSIC_DIR="$HOME/Musica"
+XDG_PICTURES_DIR="$HOME/Immagini"
+XDG_VIDEOS_DIR="$HOME/Video"
+XDG_PUBLICSHARE_DIR="$HOME/Pubblici"
+XDG_BIN_DIR="$HOME/bin"
+XDG_DOTFILES_DIR="$HOME/dotfiles"

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Link
+Name=DeepL Translate
+Comment=
+Icon=/media/ilnanny/dati-linux/dotfiles/graphics/icons/in_lavorazione/deepl.svg
+URL=https://www.deepl.com/it/translator
+X-XFCE-Source=file:///home/ilnanny/dotfiles/home/DeepL%20Translate.desktop

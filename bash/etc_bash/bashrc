@@ -1,0 +1,46 @@
+#==========================================================
+#  O.S.      : Gnu Linux Arch, Debian, Void
+#  Author    : Cristian Pozzessere (ilnanny)
+#  Github    : https://github.com/ilnanny75
+#  File      : Master Bash Config - Lab 2026
+#==========================================================
+
+# 1. Controllo Shell Interattiva
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# 2. Caricamento Profili di Sistema
+# append_path é definita qui per compatibilità multi distro:
+# su shell non-login /etc/profile non viene caricato.
+append_path() {
+    case ":${PATH}:" in
+        *:"$1":*) ;;
+        *) export PATH="${PATH:+$PATH:}$1" ;;
+    esac
+}
+
+if [ -d /etc/profile.d ]; then
+    for SH in /etc/profile.d/*.sh; do
+        [ -r "$SH" ] && . "$SH"
+    done
+fi
+
+unset -f append_path
+
+# 3. IL Dotfilers Core
+MY_BASH_DIR="$HOME/.bashrc.d"
+
+if [ -d "$MY_BASH_DIR" ]; then
+    # Carica TUTTI i file presenti nella cartella, ignorando solo quelli temporanei
+    for file in "$MY_BASH_DIR"/*; do
+        [ -r "$file" ] && [ -f "$file" ] && . "$file"
+    done
+fi
+
+# 4. PATH Personale.
+export PATH="$HOME/dotfiles/scripts/bin:$HOME/bin:$PATH"
+
+# 5. Impostazioni Prompt.
+PS1='┌─[✔]───[\u@⚡]───[\w]───[\s]\n└───▶ '
