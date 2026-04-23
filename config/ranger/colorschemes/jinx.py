@@ -1,9 +1,6 @@
 """
-A ranger color scheme
+Ranger color scheme
 
-Made to be eye catchy while maintaining visibility, and base 0-7 colours.
-
-Inspired by themes like Tomorrow, Dracula, Atom, and Spacemacs, but with my own twists
 """
 
 from ranger.gui.colorscheme import ColorScheme

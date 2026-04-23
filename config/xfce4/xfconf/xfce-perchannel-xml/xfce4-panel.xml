@@ -91,6 +91,7 @@
         <value type="string" value="xfce4-screenshooter.desktop"/>
         <value type="string" value="org.inkscape.Inkscape.desktop"/>
         <value type="string" value="lightdm-gtk-greeter-settings.desktop"/>
+        <value type="string" value="com.logseq.Logseq.desktop"/>
       </property>
       <property name="recent" type="array">
         <value type="string" value="com.logseq.Logseq.desktop"/>
@@ -102,8 +103,8 @@
         <value type="string" value="xfce4-color-settings.desktop"/>
         <value type="string" value="xfce4-settings-editor.desktop"/>
       </property>
-      <property name="menu-height" type="int" value="644"/>
-      <property name="menu-width" type="int" value="548"/>
+      <property name="menu-height" type="int" value="725"/>
+      <property name="menu-width" type="int" value="554"/>
       <property name="category-icon-size" type="int" value="2"/>
       <property name="launcher-show-description" type="bool" value="false"/>
     </property>
